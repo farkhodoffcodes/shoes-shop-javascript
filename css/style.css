@@ -105,11 +105,15 @@ header .brand_nav ul li select option {
 header .brand_nav ul li a {
   text-decoration: none;
   font-size: 13px;
-  color: #fff;
+  color: #ffffff75;
 }
 
 header .brand_nav ul li a:hover {
-  opacity: 0.6;
+  color: #fff;
+}
+
+header .brand_nav i {
+  color: orangered;
 }
 
 header .brand_nav ul li a img {
@@ -453,16 +457,19 @@ aside {
 }
 
 .filter_bx .shoes_check .input_p .input1 input {
-  z-index: 999;
   opacity: 0;
   cursor: pointer;
   width: 100%;
 }
 
 .filter_bx .shoes_check .input_p .input1 i {
+  position: absolute;
   background-color: #222;
   color: #fff;
   cursor: pointer;
+  top: 0;
+  left: 0;
+  transition: 0.6s linear;
 }
 
 .filter_bx .shoes_check .input_p .input1:nth-child(2) i {

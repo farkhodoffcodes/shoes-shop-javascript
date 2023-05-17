@@ -297,4 +297,80 @@ fetch(url)
         });
       }
     });
+    let right_input = document.querySelector("#right_input");
+    let right_input_icon = document.querySelector(".right_input_icon");
+    let left_input = document.querySelector("#left_input");
+    let left_input_icon = document.querySelector(".left_input_icon");
+
+    // LEFT
+    left_input.addEventListener("change", () => {
+      let array__1000_5000 = all_shoes_arr.filter((el) => {
+        return el.Price <= 50000;
+      });
+      left_input_icon.style.left = left_input.value + "%";
+      let price_box_value_left = (50000 / 100) * left_input.value;
+      let array__1000_5000_left = array__1000_5000.filter((el) => {
+        return el.Price >= price_box_value_left;
+      });
+
+      main_shoes_bx.innerHTML = "";
+      array__1000_5000_left.forEach((element, i) => {
+        const { Img, Category, Color, Name, Price, Tag, MRP } = element;
+        let card = document.createElement("a");
+        card.classList.add("card");
+        card.innerHTML = `
+            <img src="${Img}" alt=${Name} />
+            <h5 class="card-title" title=${Name}>
+              ${Name}
+            </h5>
+            <p>${Category}</p>
+            <div class="price">
+              <h5>UZS ${Price}</h5>
+              <h5>UZS <del>${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+              <h6>Color ${Color}</h6>
+              <h6>${Tag}</h6>
+            </div>
+          `;
+        main_shoes_bx.appendChild(card);
+      });
+    });
+
+    // RIGHT
+    right_input.addEventListener("change", () => {
+      right_input_icon.style.left = right_input.value + "%";
+      let price_box_value_right = (50000 / 100) * right_input.value;
+
+      let array__50001_10000 = all_shoes_arr.filter((el) => {
+        return el.Price >= 50000;
+      });
+
+      let array__1000_5000_right = array__50001_10000.filter((el) => {
+        return el.Price >= price_box_value_right + 50000;
+      });
+
+      main_shoes_bx.innerHTML = "";
+      array__1000_5000_right.forEach((element, i) => {
+        const { Img, Category, Color, Name, Price, Tag, MRP } = element;
+        let card = document.createElement("a");
+        card.classList.add("card");
+        card.innerHTML = `
+            <img src="${Img}" alt=${Name} />
+            <h5 class="card-title" title=${Name}>
+              ${Name}
+            </h5>
+            <p>${Category}</p>
+            <div class="price">
+              <h5>UZS ${Price}</h5>
+              <h5>UZS <del>${MRP}</del></h5>
+            </div>
+            <div class="color_tag">
+              <h6>Color ${Color}</h6>
+              <h6>${Tag}</h6>
+            </div>
+          `;
+        main_shoes_bx.appendChild(card);
+      });
+    });
   });
