@@ -12,7 +12,7 @@ let high = document.querySelector("#high");
 
 let main_shoes_bx = document.querySelector(".main_shoes_bx");
 
-let url = "backend/json.json";
+let url = "backend/shoes.json";
 
 fetch(url)
   .then((Response) => Response.json())
