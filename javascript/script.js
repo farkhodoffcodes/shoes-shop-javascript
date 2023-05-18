@@ -307,8 +307,12 @@ fetch(url)
       let array__1000_5000 = all_shoes_arr.filter((el) => {
         return el.Price <= 50000;
       });
+
       left_input_icon.style.left = left_input.value + "%";
       let price_box_value_left = (50000 / 100) * left_input.value;
+
+      document.querySelector(".left_price").textContent = price_box_value_left;
+
       let array__1000_5000_left = array__1000_5000.filter((el) => {
         return el.Price >= price_box_value_left;
       });
@@ -342,6 +346,9 @@ fetch(url)
       right_input_icon.style.left = right_input.value + "%";
       let price_box_value_right = (50000 / 100) * right_input.value;
 
+      document.querySelector(".right_price").textContent =
+        price_box_value_right;
+
       let array__50001_10000 = all_shoes_arr.filter((el) => {
         return el.Price >= 50000;
       });
@@ -370,6 +377,80 @@ fetch(url)
               <h6>${Tag}</h6>
             </div>
           `;
+        main_shoes_bx.appendChild(card);
+      });
+    });
+
+    const color = [
+      "white",
+      "gray-white",
+      "yellow",
+      "yellow-black",
+      "orange",
+      "green",
+      "sky-blue",
+      "pink",
+      "red",
+      "blue",
+      "gray-black",
+      "brown",
+      "black",
+    ];
+
+    Array.from(document.querySelectorAll(".color")).forEach((item, index) => {
+      item.addEventListener("click", () => {
+        const color_array = all_shoes_arr.filter((el) => {
+          return el.ColorTag === color[index];
+        });
+
+        main_shoes_bx.innerHTML = "";
+
+        color_array.forEach((element, i) => {
+          const { Img, Category, Color, Name, Price, Tag, MRP } = element;
+          let card = document.createElement("a");
+          card.classList.add("card");
+          card.innerHTML = `
+				<img src="${Img}" alt=${Name} />
+				<h5 class="card-title" title=${Name}>
+				  ${Name}
+				</h5>
+				<p>${Category}</p>
+				<div class="price">
+				  <h5>UZS ${Price}</h5>
+				  <h5>UZS <del>${MRP}</del></h5>
+				</div>
+				<div class="color_tag">
+				  <h6>Color ${Color}</h6>
+				  <h6>${Tag}</h6>
+				</div>
+			  `;
+          main_shoes_bx.appendChild(card);
+        });
+      });
+    });
+
+    document.querySelector(".colors").addEventListener("click", () => {
+      main_shoes_bx.innerHTML = "";
+
+      all_shoes_arr.forEach((element, i) => {
+        const { Img, Category, Color, Name, Price, Tag, MRP } = element;
+        let card = document.createElement("a");
+        card.classList.add("card");
+        card.innerHTML = `
+							<img src="${Img}" alt=${Name} />
+							<h5 class="card-title" title=${Name}>
+							  ${Name}
+							</h5>
+							<p>${Category}</p>
+							<div class="price">
+							  <h5>UZS ${Price}</h5>
+							  <h5>UZS <del>${MRP}</del></h5>
+							</div>
+							<div class="color_tag">
+							  <h6>Color ${Color}</h6>
+							  <h6>${Tag}</h6>
+							</div>
+						  `;
         main_shoes_bx.appendChild(card);
       });
     });

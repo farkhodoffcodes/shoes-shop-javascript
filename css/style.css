@@ -496,7 +496,7 @@ aside {
 }
 
 .filter_bx .shoes_check .color_bx h6 {
-  border: 4px solid #fff;
+  border: 4px solid white;
   padding: 7px;
   margin: 3px;
   cursor: pointer;
@@ -509,59 +509,54 @@ aside {
 }
 
 .filter_bx .shoes_check .color_bx h6:nth-child(2) {
-  border: 4px solid #727272;
+  border-color: yellow;
 }
 
 .filter_bx .shoes_check .color_bx h6:nth-child(3) {
-  border: 4px solid #12be2f;
+  border-color: orange;
 }
 
 .filter_bx .shoes_check .color_bx h6:nth-child(4) {
-  border: 4px solid #9aa021;
+  border-color: yellowgreen;
 }
 
 .filter_bx .shoes_check .color_bx h6:nth-child(5) {
-  border: 4px solid #58f6cc;
+  border-color: pink;
 }
 
 .filter_bx .shoes_check .color_bx h6:nth-child(6) {
-  border: 4px solid #9f001a;
+  border-color: rgb(135, 235, 157);
 }
 
 .filter_bx .shoes_check .color_bx h6:nth-child(7) {
-  border: 4px solid #00b0dc;
+  border-color: rgba(181, 181, 181, 0.562);
 }
 
 .filter_bx .shoes_check .color_bx h6:nth-child(8) {
-  border: 4px solid #800089;
+  border-color: red;
 }
 
 .filter_bx .shoes_check .color_bx h6:nth-child(9) {
-  border: 4px solid #3fafaf;
+  border-color: rgba(105, 105, 105, 0.511);
 }
 
 .filter_bx .shoes_check .color_bx h6:nth-child(10) {
-  border: 4px solid #d40086;
+  border-color: gray;
 }
 
 .filter_bx .shoes_check .color_bx h6:nth-child(11) {
-  border: 4px solid #1e0078;
+  border-color: brown;
 }
 
 .filter_bx .shoes_check .color_bx h6:nth-child(12) {
-  border: 4px solid #5f125e;
+  border-color: rgb(160, 172, 88);
 }
 
 .filter_bx .shoes_check .color_bx h6:nth-child(13) {
-  border: 4px solid #008850;
-}
-
-.filter_bx .shoes_check .color_bx h6:nth-child(14) {
-  border: 4px solid #a9bf00;
+  border-color: black;
 }
 
 .filter_bx .shoes_check .color_bx h6.colors {
-  border: 4px solid inherit;
   border-top-color: #a9bf00;
   border-bottom-color: #008850;
   border-left-color: #03b3e4;
